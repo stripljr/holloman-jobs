@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #142028;
+  --ink-soft: #243844;
+  --muted: #5c6a72;
+  --sand: #f3eee6;
+  --paper: #faf7f2;
+  --dune: #fffdf8;
+  --clay: #8f3f1d;
+  --clay-bright: #b85c32;
+  --turquoise: #0f6e68;
+  --pine: #1a3832;
+  --gold: #a68446;
+  --gold-soft: #e6c98a;
+  --line: #e4d8c6;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-sand: var(--sand);
+  --color-paper: var(--paper);
+  --color-dune: var(--dune);
+  --color-clay: var(--clay);
+  --color-clay-bright: var(--clay-bright);
+  --color-turquoise: var(--turquoise);
+  --color-pine: var(--pine);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-line: var(--line);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-outfit), sans-serif;
+}
+
+::selection {
+  background: #d5ebe6;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--turquoise);
+  outline-offset: 3px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

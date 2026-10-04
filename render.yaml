@@ -1,0 +1,17 @@
+# Render Blueprint for the Holloman Jobs sample.
+# Dashboard: New > Blueprint > connect the GitHub repo.
+# Free web services sleep when idle. Change plan to starter for an always-on instance.
+services:
+  - type: web
+    name: coc-holloman-jobs
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
